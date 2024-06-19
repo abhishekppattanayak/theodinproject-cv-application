@@ -39,6 +39,7 @@ export default function App() {
           {accordian==0 && 
             <GeneralForm
               onChange={(field)=>(e)=>setGeneral({...general, [field]:e.target.value})}
+              general={general}
             />
           }
         </section>

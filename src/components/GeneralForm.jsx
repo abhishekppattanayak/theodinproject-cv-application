@@ -25,6 +25,7 @@ export default function GeneralForm (props) {
         required={true}
         maxLength='24'
         onChange={props.onChange('name')}
+        value={props.general.name}
       />
 
       <Input
@@ -35,6 +36,7 @@ export default function GeneralForm (props) {
         maxLength='36'
         required={true}
         onChange={props.onChange('email')}
+        value={props.general.email}
       />
 
       <Input
@@ -45,6 +47,7 @@ export default function GeneralForm (props) {
         maxLength='16'
         required={true}
         onChange={props.onChange('phno')}
+        value={props.general.phno}
       />
     </form>
   )
