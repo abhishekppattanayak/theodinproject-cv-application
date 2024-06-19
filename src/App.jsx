@@ -60,10 +60,8 @@ export default function App() {
             <DisplayEducation
               education={education}
               onDelete={(index) => () => setEducation(education.filter((_, i) => i !== index))}
-              saveEdit={(index) => (newEdit) => () => setEducation(prev => {
-                prev[index]=newEdit
-                return prev
-              })}
+              saveEdit={(index) => (newEdit) => () => setEducation([...education.slice(0,index), newEdit, ...education.slice(index+1)])
+              }
             />
           )}
         </section>
@@ -85,10 +83,7 @@ export default function App() {
             <DisplayWork
               experience={experience}
               onDelete={index=>()=>setExperience(experience.filter((_,i) => i!==index))}
-              saveEdit={index => newEdit => () => setExperience(prev => {
-                prev[index]=newEdit
-                return prev
-              })}
+              saveEdit={index => newEdit => () => setExperience([...experience.slice(0,index), newEdit, ...experience.slice(index+1)])}
             />
           )}
         </section>
