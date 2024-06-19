@@ -2,6 +2,9 @@ import { useState } from "react"
 import GeneralForm from "./components/GeneralForm"
 import AddEducation from "./components/Edu.add"
 import DisplayEducation from "./components/Edu.disp"
+import AddWork from "./components/Work.add"
+import DisplayWork from "./components/Work.disp"
+import { Resume } from "./components/Resume"
 
 function Heading (props) {
   return (
@@ -68,15 +71,35 @@ export default function App() {
         <section onClick={()=>setAccordian(2)} >
           <Heading
             heading="Work Experience"
-            onClick={()=>{}}
+            onClick={()=>{setNewWork(true)}}
           />
+          {accordian==2 && (newWork ?
+            <AddWork
+              onSubmit={(newWorkExp)=>()=>{
+                setNewWork(false)
+                setExperience([...experience, newWorkExp])
+              }}
+              cancel={()=>setNewWork(false)}
+            />
+            :
+            <DisplayWork
+              experience={experience}
+              onDelete={index=>()=>setExperience(experience.filter((_,i) => i!==index))}
+              saveEdit={index => newEdit => () => setExperience(prev => {
+                prev[index]=newEdit
+                return prev
+              })}
+            />
+          )}
         </section>
       </main>
 
       {/* resume */}
-      <section>
-        
-      </section>
+      <aside className="px-4 py-8 flex justify-center">
+        <div className="w-4/5 aspect-A4 border border-black *:px-2 *:sm:px-4 *:md:px-6 *:lg:px-8 *:py-4 flex flex-col">
+          <Resume general={general} education={education} experience={experience} />
+        </div>
+      </aside>
     </div>
   )
 }

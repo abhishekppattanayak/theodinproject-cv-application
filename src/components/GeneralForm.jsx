@@ -1,15 +1,16 @@
 export function Input(props) {
   return (
-    <div className="flex gap-4 *:text-xl my-2">
-      <label>{props.label}</label>
+    <div className="flex flex-col sm:flex-row sm:gap-4 *:sm:text-xl my-2">
+      <label className="px-2">{props.label}</label>
       <input
-        className="font-bold placeholder:font-normal rounded-md px-2 grow"
+        className="font-bold placeholder:font-normal rounded-md px-2 grow border bg-gray-400/5"
         type={ props.type ?? 'text'}
         placeholder={props.placeholder ?? ''}
         onChange={props.onChange}
         minLength={props.minLength}
         maxLength={props.maxLength}
         required={props.required ?? false}
+        value={props.value}
       />
     </div>
   )

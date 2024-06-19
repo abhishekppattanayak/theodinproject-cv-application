@@ -1,22 +1,5 @@
 import { useState } from "react";
-
-function Input (props) {
-  return (
-    <div className="flex gap-4 *:text-xl my-2">
-      <label>{props.label}</label>
-      <input
-        className="font-bold placeholder:font-normal rounded-md px-2"
-        type={ props.type ?? 'text'}
-        placeholder={props.placeholder ?? ''}
-        onChange={props.onChange}
-        minLength={props.minLength}
-        maxLength={props.maxLength}
-        required={props.required ?? false}
-        value={props.value}
-      />
-    </div>
-  )
-}
+import { Input } from "./GeneralForm";
 
 function EditEducation (props) {
   const [name, setName] = useState(props.name)
@@ -54,7 +37,6 @@ function EditEducation (props) {
         <Input
           label='From'
           type='date'
-          maxLength='8'
           required={true}
           onChange={e=>setFrom(e.target.value)}
           value={from}
@@ -101,7 +83,7 @@ export default function DisplayEducation (props) {
   return (
     <div className="text-xl my-2 *:border *:border-black *:rounded-md flex flex-col gap-2">
       {props.education.length==0 ? 
-        <span className="p-2" >List is Empty</span> 
+        <span className="p-2 italic ">List is Empty</span> 
         : 
         props.education.map(e => 
           <EditEducation
