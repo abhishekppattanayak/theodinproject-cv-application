@@ -37,7 +37,7 @@ export default function AddEducation ( props ) {
       
       <Input
         label='From'
-        type='date'
+        placeholder='Dec 2018'
         maxLength='8'
         required={true}
         onChange={e=>setFrom(e.target.value)}
@@ -45,7 +45,7 @@ export default function AddEducation ( props ) {
 
       <Input
         label='To'
-        type='date'
+        placeholder='Aug 2022'
         maxLength='8'
         required={true}
         onChange={e=>setTo(e.target.value)}

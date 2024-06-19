@@ -36,7 +36,7 @@ function EditEducation (props) {
         
         <Input
           label='From'
-          type='date'
+          placeholder='Dec 2021'
           required={true}
           onChange={e=>setFrom(e.target.value)}
           value={from}
@@ -44,7 +44,7 @@ function EditEducation (props) {
   
         <Input
           label='To'
-          type='date'
+          placeholder='Aug 2025'
           maxLength='8'
           required={true}
           onChange={e=>setTo(e.target.value)}
@@ -60,8 +60,8 @@ function EditEducation (props) {
     ) : (
       <div className="flex items-center p-2 gap-2" onClick={props.onClick(props.index)}>
         <div className="grow flex">
-          <h1 className="font-bold">{props.title},&nbsp;</h1>
-          <h1>{props.name}</h1>
+          <h1 className="font-bold">{props.name},&nbsp;</h1>
+          <h1>{props.title}</h1>
         </div>
         <img src="/edit.png" alt="" className="h-6"
           onClick={props.onEdit}

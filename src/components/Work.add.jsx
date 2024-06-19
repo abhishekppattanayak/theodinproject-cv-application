@@ -41,14 +41,14 @@ export default function AddWork (props) {
 
       <Input
         label='From'
-        type='date'
+        placeholder='Apr 2024'
         required={true}
         onChange={e=>setFrom(e.target.value)}
       />
 
       <Input
         label='To'
-        type='date'
+        placeholder='Apr 2026'
         required={true}
         onChange={e=>setTo(e.target.value)}
       />

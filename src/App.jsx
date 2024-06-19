@@ -95,7 +95,7 @@ export default function App() {
       </main>
 
       {/* resume */}
-      <aside className="px-4 py-8 flex justify-center">
+      <aside className="px-4 py-8 flex justify-center md:text-xl">
         <div className="w-4/5 aspect-A4 border border-black *:px-2 *:sm:px-4 *:md:px-6 *:lg:px-8 *:py-4 flex flex-col">
           <Resume general={general} education={education} experience={experience} />
         </div>
