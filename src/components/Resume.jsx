@@ -4,12 +4,12 @@ export function Resume (props) {
     <>
 
       <div className="flex flex-col items-center gap-2">
-        <h1 className="font-bold text-3xl">{props.general.name}</h1>
-        <div className="flex gap-2 justify-evenly w-full text-lg">
+        <h1 className="font-bold text-base sm:text-lg md:text-xl lg:text-3xl">{props.general.name}</h1>
+        <div className="flex gap-2 justify-evenly w-full text-xs sm:text-sm md:text-base xl:text-lg">
 
-          {props.general.email && <a href={`mailto:${props.general.email}`} className="text-blue-700 underline"><img src="/email.png" className="inline mr-2" />{props.general.email}</a>}
+          {props.general.email && <a href={`mailto:${props.general.email}`} className="text-blue-700 underline"><img src="/email.png" className="inline mr-2 h-4 sm:h-6" />{props.general.email}</a>}
 
-          {props.general.phno && <h1><img src="/telephone.png" className="inline mr-2" />{props.general.phno}</h1> }
+          {props.general.phno && <h1><img src="/telephone.png" className="inline mr-2 h-4 sm:h-6" />{props.general.phno}</h1> }
         </div>
       </div>
       

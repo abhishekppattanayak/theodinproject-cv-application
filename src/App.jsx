@@ -30,7 +30,7 @@ export default function App() {
   const [experience, setExperience] = useState([])
 
   return (
-    <div className="px-4 py-8 min-h-screen flex flex-col lg:flex-row *:lg:w-1/2 *:grow">
+    <div className="p-1.5 xl:px-4 py-8 min-h-screen flex flex-col lg:flex-row *:lg:w-1/2 *:grow gap-4">
       {/* section forms */}
       <main className="flex flex-col gap-4 *:rounded-lg *:border *:border-black *:px-2 *:sm:px-4 *:md:px-6 *:lg:px-8 *:py-4 ">
 
@@ -91,8 +91,8 @@ export default function App() {
       </main>
 
       {/* resume */}
-      <aside className="px-4 py-8 flex justify-center md:text-xl">
-        <div className="w-4/5 aspect-A4 border border-black *:px-2 *:sm:px-4 *:md:px-6 *:lg:px-8 *:py-4 flex flex-col">
+      <aside className="py-8 flex justify-center md:text-xl">
+        <div className="w-full aspect-A4 border border-black *:py-4 flex flex-col *:px-4">
           <Resume general={general} education={education} experience={experience} />
         </div>
       </aside>
